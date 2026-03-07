@@ -198,7 +198,8 @@
 }
 
 @utility focus-ring {
-  &:focus-visible {
+  &:focus-visible,
+  &:has(:focus-visible) {
     outline: 1px dashed var(--border-color);
     outline-offset: 2px;
     background-color: var(--hover-bg);

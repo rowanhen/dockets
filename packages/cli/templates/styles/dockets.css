@@ -87,13 +87,15 @@
  * ───────────────────
  * All dockets components use the `focus-ring` utility for consistent
  * keyboard focus styling. Add the class directly — it handles :focus-visible
+ * and :has(:focus-visible) (for components that wrap a hidden native input)
  * internally:
  *
  *   <button class="focus-ring">...</button>
  */
 
 @utility focus-ring {
-  &:focus-visible {
+  &:focus-visible,
+  &:has(:focus-visible) {
     outline: 1px dashed var(--border-color);
     outline-offset: 2px;
     background-color: var(--hover-bg);
