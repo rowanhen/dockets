@@ -39,6 +39,7 @@ export const addCommand = new Command("add")
     "."
   )
   .option("-y, --yes", "overwrite existing files without prompting", false)
+  .option("-a, --alias <prefix>", "import alias prefix (default: @/)", "@/")
   .action((components: string[], options) => {
     const projectRoot = resolve(process.cwd(), options.dest);
 
@@ -85,7 +86,12 @@ export const addCommand = new Command("add")
           mkdirSync(destDir, { recursive: true });
         }
 
-        writeFileSync(dest, readFileSync(src, "utf-8"));
+        let content = readFileSync(src, "utf-8");
+        if (options.alias && options.alias !== "@/") {
+          content = content.replaceAll("'@/", `'${options.alias}`);
+          content = content.replaceAll('"@/', `"${options.alias}`);
+        }
+        writeFileSync(dest, content);
         console.log(`${pc.green("✓")} ${pc.cyan(file.dest)}`);
         filesWritten++;
       }

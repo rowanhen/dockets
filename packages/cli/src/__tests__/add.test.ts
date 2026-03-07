@@ -139,6 +139,16 @@ describe("CLI add command", () => {
     expect(stdout).toContain("tailwind-merge");
   });
 
+  // ─── Alias rewriting ─────────────────────────────────────────
+
+  test("rewrites import aliases with --alias flag", () => {
+    const { exitCode } = runCli("add button -y --alias '~/'");
+    expect(exitCode).toBe(0);
+    const content = readFileSync(join(fixtureDir, "components/ui/button.tsx"), "utf-8");
+    expect(content).toContain("from '~/lib/utils'");
+    expect(content).not.toContain("from '@/");
+  });
+
   // ─── Dest flag ────────────────────────────────────────────────
 
   test("respects --dest flag for custom output directory", () => {
