@@ -1,6 +1,6 @@
 {
   "name": "@leitware/dockets",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "CLI to add Leitware design system components to your project",
   "type": "module",
   "bin": {
@@ -12,7 +12,10 @@
       "default": "./dist/index.js"
     }
   },
-  "files": ["dist", "templates"],
+  "files": [
+    "dist",
+    "templates"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "bun run src/cli.ts",
