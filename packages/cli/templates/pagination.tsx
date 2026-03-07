@@ -1,4 +1,3 @@
-import * as React from 'react'
 import {
 	Pagination,
 	PaginationContent,
@@ -44,7 +43,7 @@ function SimplePagination({ page, totalPages, onPageChange, className }: SimpleP
 						disabled={page <= 1}
 					/>
 				</PaginationItem>
-				{visiblePages.map((p, i) =>
+				{visiblePages.map((p) =>
 					typeof p === 'string' ? (
 						<PaginationItem key={p}>
 							<PaginationEllipsis />

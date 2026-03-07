@@ -1,6 +1,7 @@
 'use client'
 
 import { ToggleGroup as ToggleGroupPrimitive } from '@base-ui/react/toggle-group'
+import { Toggle as TogglePrimitive } from '@base-ui/react/toggle'
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 import { toggleVariants } from '@/components/ui/toggle'
@@ -19,10 +20,10 @@ function ToggleGroup({
 	size = 'default',
 	children,
 	...props
-}: ToggleGroupPrimitive.Root.Props & VariantProps<typeof toggleVariants>) {
+}: ToggleGroupPrimitive.Props & VariantProps<typeof toggleVariants>) {
 	return (
 		<ToggleGroupContext.Provider value={{ variant, size }}>
-			<ToggleGroupPrimitive.Root
+			<ToggleGroupPrimitive
 				data-slot="toggle-group"
 				className={cn(
 					// Container holds left+top border; items add right+bottom (newspaper pattern)
@@ -32,7 +33,7 @@ function ToggleGroup({
 				{...props}
 			>
 				{children}
-			</ToggleGroupPrimitive.Root>
+			</ToggleGroupPrimitive>
 		</ToggleGroupContext.Provider>
 	)
 }
@@ -43,13 +44,13 @@ function ToggleGroupItem({
 	size,
 	children,
 	...props
-}: ToggleGroupPrimitive.Item.Props & VariantProps<typeof toggleVariants>) {
+}: TogglePrimitive.Props & VariantProps<typeof toggleVariants>) {
 	const ctx = React.useContext(ToggleGroupContext)
 	const resolvedVariant = variant ?? ctx.variant
 	const resolvedSize = size ?? ctx.size
 
 	return (
-		<ToggleGroupPrimitive.Item
+		<TogglePrimitive
 			data-slot="toggle-group-item"
 			className={cn(
 				toggleVariants({ variant: resolvedVariant, size: resolvedSize }),
@@ -61,7 +62,7 @@ function ToggleGroupItem({
 			{...props}
 		>
 			{children}
-		</ToggleGroupPrimitive.Item>
+		</TogglePrimitive>
 	)
 }
 

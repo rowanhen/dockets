@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Slider } from '@/components/ui/slider'
 import { cn } from '@/lib/utils'
 
@@ -10,7 +9,7 @@ export interface LabelledSliderProps {
 	step?: number
 	label?: string
 	showValue?: boolean
-	onValueChange?: (value: number[]) => void
+	onValueChange?: (value: number | readonly number[]) => void
 	className?: string
 	disabled?: boolean
 }

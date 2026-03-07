@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Progress } from '@/components/ui/progress'
 import { cn } from '@/lib/utils'
 
@@ -20,7 +19,7 @@ function LabelledProgress({ value, max = 100, label, showValue = false, classNam
 					{showValue && <span className="text-muted-foreground">{pct != null ? `${pct}%` : '–'}</span>}
 				</div>
 			)}
-			<Progress value={value} max={max} />
+			<Progress value={value ?? null} max={max} />
 		</div>
 	)
 }

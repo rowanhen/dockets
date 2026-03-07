@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Skeleton, SkeletonText } from '@/components/ui/skeleton'
 import { cn } from '@/lib/utils'
 

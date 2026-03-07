@@ -1,6 +1,4 @@
-import * as React from 'react'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
-import { cn } from '@/lib/utils'
 
 export interface UserAvatarProps {
 	src?: string

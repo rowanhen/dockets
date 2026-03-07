@@ -1,7 +1,6 @@
 'use client'
 
 import { Slider as SliderPrimitive } from '@base-ui/react/slider'
-import * as React from 'react'
 import { cn } from '@/lib/utils'
 
 function Slider({ className, ...props }: SliderPrimitive.Root.Props) {
@@ -32,9 +31,9 @@ function SliderTrack({ className, ...props }: SliderPrimitive.Track.Props) {
 	)
 }
 
-function SliderFill({ className, ...props }: SliderPrimitive.Fill.Props) {
+function SliderFill({ className, ...props }: SliderPrimitive.Indicator.Props) {
 	return (
-		<SliderPrimitive.Fill
+		<SliderPrimitive.Indicator
 			data-slot="slider-fill"
 			className={cn('absolute h-full bg-foreground', className)}
 			{...props}

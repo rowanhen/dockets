@@ -54,7 +54,7 @@ function PaginationLink({ className, isActive, disabled, ...props }: PaginationL
 	)
 }
 
-function PaginationPrevious({ className, ...props }: React.ComponentProps<'a'>) {
+function PaginationPrevious({ className, ...props }: PaginationLinkProps) {
 	return (
 		<PaginationLink
 			data-slot="pagination-previous"
@@ -68,7 +68,7 @@ function PaginationPrevious({ className, ...props }: React.ComponentProps<'a'>) 
 	)
 }
 
-function PaginationNext({ className, ...props }: React.ComponentProps<'a'>) {
+function PaginationNext({ className, ...props }: PaginationLinkProps) {
 	return (
 		<PaginationLink
 			data-slot="pagination-next"
