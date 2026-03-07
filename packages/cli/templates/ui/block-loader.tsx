@@ -31,7 +31,7 @@ function BlockLoader({ mode = 1, className, ...props }: BlockLoaderProps) {
 	}, [sequence.length])
 
 	return (
-		<span className={cn('inline-block w-[1em] text-center', className)} aria-label="Loading" {...props}>
+		<span data-slot="block-loader" className={cn('inline-block w-[1em] text-center', className)} aria-label="Loading" {...props}>
 			{sequence[index]}
 		</span>
 	)

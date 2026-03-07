@@ -7,6 +7,7 @@ const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(
 	({ children, className, ...props }, ref) => {
 		return (
 			<pre
+				data-slot="code-block"
 				ref={ref}
 				className={cn(
 					'block font-normal overflow-auto bg-[var(--receipt-bg)] scrollbar-none',

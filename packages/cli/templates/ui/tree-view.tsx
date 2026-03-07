@@ -42,7 +42,7 @@ const TreeView = React.forwardRef<HTMLDivElement, TreeViewProps>(
 		const updatedParentLines = [...parentLines, !isLastChild]
 
 		return (
-			<div ref={ref} className={cn('whitespace-nowrap', className)} {...props}>
+			<div ref={ref} data-slot="tree-view" className={cn('whitespace-nowrap', className)} {...props}>
 				<div
 					tabIndex={0}
 					role="button"

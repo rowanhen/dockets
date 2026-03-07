@@ -34,6 +34,7 @@ const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>(
 		return (
 			<li
 				ref={combinedRef}
+				data-slot="list-item"
 				className={cn('pl-[1ch]', className)}
 				tabIndex={0}
 				onKeyDown={handleKeyDown}

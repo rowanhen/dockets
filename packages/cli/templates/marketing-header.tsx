@@ -28,7 +28,7 @@ export function MarketingHeader({
 			<div className="wrap flex items-center justify-between h-16">
 				<a
 					href="/"
-					className="flex items-center gap-2 font-semibold focus-ring"
+					className="flex items-center gap-2 font-medium focus-ring"
 					aria-label="LEITWARE home"
 				>
 					<Logo className="w-7 h-7" />

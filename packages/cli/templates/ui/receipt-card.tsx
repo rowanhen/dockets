@@ -53,6 +53,7 @@ const ReceiptCard = React.forwardRef<HTMLElement, CardProps>(
 		return (
 			<article
 				ref={ref}
+				data-slot="receipt-card"
 				className={cn('relative block p-0 whitespace-pre-wrap', className)}
 				{...props}
 			>

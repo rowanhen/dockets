@@ -66,7 +66,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		}
 
 		return (
-			<button className={classes} ref={ref} {...props}>
+			<button data-slot="button" className={classes} ref={ref} {...props}>
 				{children}
 			</button>
 		)
