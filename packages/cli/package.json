@@ -1,0 +1,40 @@
+{
+  "name": "@leitware/dockets",
+  "version": "0.1.0",
+  "description": "CLI to add Leitware design system components to your project",
+  "type": "module",
+  "bin": {
+    "leit": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "templates"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "bun run src/cli.ts",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rowanhen/dockets.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

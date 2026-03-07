@@ -1,0 +1,14 @@
+{
+  "name": "@leitware/dockets",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build": "bun run --filter '@leitware/dockets' build && bun run --filter '@leitware/components' build",
+    "dev": "bun run --cwd packages/showcase dev",
+    "test": "bun test --recursive",
+    "prepare": "git config core.hooksPath .githooks"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}
