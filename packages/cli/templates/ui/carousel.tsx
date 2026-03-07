@@ -68,7 +68,7 @@ function Carousel({ className, orientation = 'horizontal', children, ...props }:
 			<div
 				data-slot="carousel"
 				data-orientation={orientation}
-				className={cn('relative', className)}
+				className={cn('flex items-center gap-2', className)}
 				{...props}
 			>
 				{children}
@@ -80,7 +80,7 @@ function Carousel({ className, orientation = 'horizontal', children, ...props }:
 function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
 	const { listRef } = useCarousel()
 	return (
-		<div className="overflow-hidden">
+		<div className="min-w-0 flex-1 overflow-hidden">
 			<div
 				ref={listRef}
 				data-slot="carousel-content"
@@ -115,7 +115,7 @@ function CarouselPrevious({ className, ...props }: React.ComponentProps<'button'
 			onClick={scrollPrev}
 			disabled={!canScrollPrev}
 			className={cn(
-				'absolute left-2 top-1/2 -translate-y-1/2 flex size-8 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-dashed border-foreground bg-card text-card-foreground hover:bg-accent disabled:pointer-events-none disabled:opacity-30',
+				'order-first flex size-8 shrink-0 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-card text-card-foreground hover:bg-accent disabled:pointer-events-none disabled:opacity-30',
 				className,
 			)}
 			aria-label="Previous slide"
@@ -135,7 +135,7 @@ function CarouselNext({ className, ...props }: React.ComponentProps<'button'>) {
 			onClick={scrollNext}
 			disabled={!canScrollNext}
 			className={cn(
-				'absolute right-2 top-1/2 -translate-y-1/2 flex size-8 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-dashed border-foreground bg-card text-card-foreground hover:bg-accent disabled:pointer-events-none disabled:opacity-30',
+				'order-last flex size-8 shrink-0 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-card text-card-foreground hover:bg-accent disabled:pointer-events-none disabled:opacity-30',
 				className,
 			)}
 			aria-label="Next slide"

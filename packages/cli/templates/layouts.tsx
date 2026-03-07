@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 
 // ─── BORDER SYSTEM ────────────────────────────────────────────────────────────
 //
-// container: border border-[var(--border-color)] bg-[var(--border-color)] gap-px
+// container: bg-[var(--border-color)] gap-px p-px
 // cells:     bg-[var(--receipt-bg)]
 //
 // Gap IS the border. Never add `border` to cells (stacks).
@@ -52,7 +52,7 @@ export function BentoSplit({
 		<div
 			className={cn(
 				'grid grid-cols-1 md:grid-cols-[200px_1fr]',
-				'border border-[var(--border-color)] bg-[var(--border-color)] gap-px',
+				'bg-[var(--border-color)] gap-px p-px',
 				className,
 			)}
 		>
@@ -94,7 +94,7 @@ export function BentoLeader({
 			className={cn(
 				'grid grid-cols-1',
 				LEADER_COLS[n],
-				'border border-[var(--border-color)] bg-[var(--border-color)] gap-px',
+				'bg-[var(--border-color)] gap-px p-px',
 				className,
 			)}
 		>
@@ -131,7 +131,7 @@ export function BentoQuad({
 		<div
 			className={cn(
 				'grid grid-cols-1 md:grid-cols-[2fr_1fr]',
-				'border border-[var(--border-color)] bg-[var(--border-color)] gap-px',
+				'bg-[var(--border-color)] gap-px p-px',
 				className,
 			)}
 		>
@@ -166,7 +166,7 @@ export function BentoTriple({
 		<div
 			className={cn(
 				'grid grid-cols-1 md:grid-cols-[1fr_2fr]',
-				'border border-[var(--border-color)] bg-[var(--border-color)] gap-px',
+				'bg-[var(--border-color)] gap-px p-px',
 				className,
 			)}
 		>
@@ -205,7 +205,7 @@ export function HeroPrimary({
 		<div
 			className={cn(
 				'grid grid-cols-1 md:grid-cols-[5fr_8fr]',
-				'border border-[var(--border-color)] bg-[var(--border-color)] gap-px',
+				'bg-[var(--border-color)] gap-px p-px',
 				className,
 			)}
 		>
@@ -255,8 +255,8 @@ export function CellGrid({
 				CELL_GRID_COLS[cols],
 				'gap-px',
 				subtle
-					? 'border border-[var(--border-subtle)] bg-[var(--border-subtle)]'
-					: 'border border-[var(--border-color)] bg-[var(--border-color)]',
+					? 'bg-[var(--border-subtle)] p-px'
+					: 'bg-[var(--border-color)] p-px',
 				className,
 			)}
 		>
@@ -281,9 +281,9 @@ export function CellRow({
 	return (
 		<div
 			className={cn(
-				'border border-[var(--border-color)]',
+				'bg-[var(--border-color)] p-px',
 				'flex flex-col md:flex-row',
-				'divide-y divide-[var(--border-color)] md:divide-y-0 md:divide-x divide-[var(--border-color)]',
+				'gap-px',
 				className,
 			)}
 		>
@@ -323,7 +323,7 @@ export function HeroSecondary({
 		<div
 			className={cn(
 				'grid grid-cols-1 md:grid-cols-[3fr_1fr]',
-				'border border-[var(--border-color)] bg-[var(--border-color)] gap-px',
+				'bg-[var(--border-color)] gap-px p-px',
 				className,
 			)}
 		>

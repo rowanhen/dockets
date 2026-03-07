@@ -1,7 +1,7 @@
 'use client'
 
 import { Checkbox as CheckboxPrimitive } from '@base-ui/react/checkbox'
-import { CheckIcon, MinusIcon } from 'lucide-react'
+import { XIcon, MinusIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 function Checkbox({ className, ...props }: CheckboxPrimitive.Root.Props) {
@@ -23,7 +23,7 @@ function Checkbox({ className, ...props }: CheckboxPrimitive.Root.Props) {
 				{/* indeterminate */}
 				<MinusIcon className="hidden size-3 data-indeterminate:block" />
 				{/* checked */}
-				<CheckIcon className="size-3 data-indeterminate:hidden" />
+				<XIcon className="size-3 data-indeterminate:hidden" />
 			</CheckboxPrimitive.Indicator>
 		</CheckboxPrimitive.Root>
 	)

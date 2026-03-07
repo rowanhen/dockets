@@ -23,7 +23,7 @@ function SliderTrack({ className, ...props }: SliderPrimitive.Track.Props) {
 		<SliderPrimitive.Track
 			data-slot="slider-track"
 			className={cn(
-				'relative h-1.5 w-full grow overflow-hidden rounded-[var(--radius)] bg-muted border-[length:var(--border-width)] border-foreground/30',
+				'relative h-3 w-full grow overflow-hidden rounded-[var(--radius)] bg-muted border-[length:var(--border-width)] border-foreground',
 				className,
 			)}
 			{...props}
@@ -46,7 +46,7 @@ function SliderThumb({ className, ...props }: SliderPrimitive.Thumb.Props) {
 		<SliderPrimitive.Thumb
 			data-slot="slider-thumb"
 			className={cn(
-				'block size-4 rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-card shadow-none',
+				'block size-5 rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-foreground shadow-none',
 				'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
 				'disabled:pointer-events-none disabled:opacity-50',
 				className,

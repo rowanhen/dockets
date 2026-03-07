@@ -48,7 +48,7 @@ function MenubarTrigger({ className, children, ...props }: MenuPrimitive.Trigger
 function MenubarContent({
 	className,
 	align = 'start',
-	sideOffset = 2,
+	sideOffset = 6,
 	...props
 }: MenuPrimitive.Popup.Props &
 	Pick<MenuPrimitive.Positioner.Props, 'align' | 'sideOffset'>) {
