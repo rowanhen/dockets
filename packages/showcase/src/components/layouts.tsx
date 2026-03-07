@@ -2,11 +2,12 @@ import { cn } from '@/lib/utils'
 
 // ─── BORDER SYSTEM ────────────────────────────────────────────────────────────
 //
-// container: bg-[var(--border-color)] gap-px p-px
-// cells:     bg-[var(--receipt-bg)]
+// Top-level containers: bg-[var(--border-color)] gap-px p-px
+// Cells:               bg-[var(--receipt-bg)]
+// Sub-grids:           bg-[var(--border-color)] gap-px (NO p-px — parent provides outer frame)
 //
 // Gap IS the border. Never add `border` to cells (stacks).
-// Nested sub-grids: bg-[var(--border-color)] gap-px grid — no `border` on sub-containers.
+// Nested sub-grids: bg-[var(--border-color)] gap-px grid — no padding on sub-containers.
 
 // ─── STAT CELL ────────────────────────────────────────────────────────────────
 //
@@ -255,8 +256,8 @@ export function CellGrid({
 				CELL_GRID_COLS[cols],
 				'gap-px',
 				subtle
-					? 'bg-[var(--border-subtle)] p-px'
-					: 'bg-[var(--border-color)] p-px',
+					? 'bg-[var(--border-subtle)]'
+					: 'bg-[var(--border-color)]',
 				className,
 			)}
 		>
@@ -281,7 +282,7 @@ export function CellRow({
 	return (
 		<div
 			className={cn(
-				'bg-[var(--border-color)] p-px',
+				'bg-[var(--border-color)]',
 				'flex flex-col md:flex-row',
 				'gap-px',
 				className,

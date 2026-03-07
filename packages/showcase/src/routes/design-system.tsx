@@ -2085,19 +2085,19 @@ function LayoutPrimitivesSection() {
 				</ExampleBlock>
 				<ExampleBlock label="BentoGrid">
 					<BentoGrid cols={3}>
-						<BentoCell span={2} className="border border-foreground p-4 text-xs uppercase tracking-wider">
+						<BentoCell span={2} className="text-xs uppercase tracking-wider">
 							<div className="text-[10px] text-[var(--muted-color)] mb-1">Span 2</div>
 							AI Pipeline Overview
 						</BentoCell>
-						<BentoCell span={1} className="border border-foreground p-4 text-xs uppercase tracking-wider">
+						<BentoCell span={1} className="text-xs uppercase tracking-wider">
 							<div className="text-[10px] text-[var(--muted-color)] mb-1">Span 1</div>
 							Status
 						</BentoCell>
-						<BentoCell span={1} className="border border-foreground p-4 text-xs uppercase tracking-wider">
+						<BentoCell span={1} className="text-xs uppercase tracking-wider">
 							<div className="text-[10px] text-[var(--muted-color)] mb-1">Span 1</div>
 							Logs
 						</BentoCell>
-						<BentoCell span={2} className="border border-foreground p-4 text-xs uppercase tracking-wider">
+						<BentoCell span={2} className="text-xs uppercase tracking-wider">
 							<div className="text-[10px] text-[var(--muted-color)] mb-1">Span 2</div>
 							Integration Health
 						</BentoCell>

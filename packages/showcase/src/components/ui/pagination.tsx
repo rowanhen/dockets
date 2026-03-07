@@ -18,7 +18,11 @@ function PaginationContent({ className, ...props }: React.ComponentProps<'ul'>) 
 	return (
 		<ul
 			data-slot="pagination-content"
-			className={cn('flex items-center gap-0 list-none', className)}
+			className={cn(
+				'flex items-center list-none',
+				'border-l-[length:var(--border-width)] border-foreground',
+				className,
+			)}
 			{...props}
 		/>
 	)
@@ -40,12 +44,11 @@ function PaginationLink({ className, isActive, disabled, ...props }: PaginationL
 			aria-current={isActive ? 'page' : undefined}
 			aria-disabled={disabled}
 			className={cn(
-				'flex h-9 min-w-9 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground text-xs font-medium uppercase tracking-wider',
-				// No stacking: negative margin collapses adjacent item borders
-				'-ml-[length:var(--border-width)] first:ml-0',
+				'flex h-9 min-w-9 items-center justify-center rounded-[var(--radius)] text-xs font-medium uppercase tracking-wider',
+				'border-t-[length:var(--border-width)] border-b-[length:var(--border-width)] border-r-[length:var(--border-width)] border-foreground',
 				isActive
 					? 'z-10 bg-foreground text-background'
-					: 'bg-card text-card-foreground hover:bg-accent hover:text-accent-foreground',
+					: 'bg-card text-card-foreground hover:bg-[var(--hover-bg)]',
 				disabled && 'pointer-events-none opacity-40',
 				className,
 			)}
@@ -88,7 +91,9 @@ function PaginationEllipsis({ className, ...props }: React.ComponentProps<'span'
 			data-slot="pagination-ellipsis"
 			aria-hidden
 			className={cn(
-				'flex h-9 w-9 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-dashed border-foreground -ml-[length:var(--border-width)] first:ml-0 text-muted-foreground',
+				'flex h-9 w-9 items-center justify-center rounded-[var(--radius)]',
+				'border-t-[length:var(--border-width)] border-b-[length:var(--border-width)] border-r-[length:var(--border-width)] border-dashed border-foreground',
+				'text-muted-foreground',
 				className,
 			)}
 			{...props}

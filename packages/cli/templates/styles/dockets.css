@@ -7,6 +7,18 @@
  *
  *   import "@/styles/dockets.css";
  *
+ * THEME SWITCHING
+ * ────────────────
+ * Dockets supports three themes: light (default), dark, and deep.
+ * Themes are activated via data-theme attribute on the root element:
+ *
+ *   <html data-theme="dark">
+ *   <html data-theme="deep">
+ *
+ * Your Tailwind config must use the matching custom dark variant:
+ *
+ *   @custom-variant dark (&:is([data-theme="dark"] *, [data-theme="deep"] *));
+ *
  * BORDER WIDTH
  * ─────────────
  * All dockets components use `--border-width` instead of a hardcoded `1px`.

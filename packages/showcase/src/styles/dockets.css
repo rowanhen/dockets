@@ -5,7 +5,7 @@
  * Install this file alongside your Tailwind CSS and import it in your
  * root layout:
  *
- *   import "@/styles/dockets.css";
+ *   import "~/styles/dockets.css";
  *
  * BORDER WIDTH
  * ─────────────

@@ -9,7 +9,7 @@ function Switch({ className, ...props }: SwitchPrimitive.Root.Props) {
 			data-slot="switch"
 			className={cn(
 				'peer inline-flex h-5 w-9 shrink-0 items-stretch rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-transparent',
-				'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
+				'focus-visible:outline-1 focus-visible:outline-dashed focus-visible:outline-[var(--border-color)] focus-visible:outline-offset-2 focus-visible:bg-[var(--hover-bg)] focus-visible:z-[9999] focus-visible:relative',
 				'disabled:cursor-not-allowed disabled:opacity-50',
 				'data-checked:bg-foreground',
 				'aria-invalid:border-destructive',

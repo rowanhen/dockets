@@ -84,7 +84,7 @@ function InputOTP({
 							'first-of-type:rounded-[var(--radius)]',
 							// No stacking: right border only on all-but-last boxes when not separated
 							idx > 0 && idx % 3 !== 0 && '-ml-[length:var(--border-width)]',
-							'focus:z-10 focus:border-foreground focus:ring-1 focus:ring-foreground/30',
+							'focus-visible:outline-1 focus-visible:outline-dashed focus-visible:outline-[var(--border-color)] focus-visible:outline-offset-2 focus-visible:bg-[var(--hover-bg)] focus-visible:z-[9999] focus-visible:relative',
 							'disabled:cursor-not-allowed disabled:opacity-50',
 						)}
 						aria-label={`Digit ${idx + 1}`}
