@@ -80,7 +80,7 @@ function Toast({
 			role="status"
 			aria-live="polite"
 			className={cn(
-				'relative flex w-full max-w-sm flex-col gap-1 rounded-none border-[length:var(--border-width)] p-3 text-xs/relaxed shadow-none',
+				'relative flex w-full max-w-sm flex-col gap-1 rounded-[var(--radius)] border-[length:var(--border-width)] p-3 text-xs/relaxed shadow-none',
 				variantClasses[variant],
 				className,
 			)}

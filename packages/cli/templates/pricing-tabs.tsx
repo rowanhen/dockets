@@ -25,14 +25,14 @@ export function PricingTabs({
 			<div className="flex justify-center mb-3 w-full max-w-[336px] mx-auto border border-solid border-foreground">
 				<Button
 					variant={activeTab === 'catchup' ? 'default' : 'secondary'}
-					className="flex-1 rounded-none"
+					className="flex-1 rounded-[var(--radius)]"
 					onClick={() => setActiveTab('catchup')}
 				>
 					Catch Up
 				</Button>
 				<Button
 					variant={activeTab === 'keepup' ? 'default' : 'secondary'}
-					className={`flex-1 rounded-none border-l border-solid border-foreground`}
+					className={`flex-1 rounded-[var(--radius)] border-l border-solid border-foreground`}
 					onClick={() => setActiveTab('keepup')}
 				>
 					Keep Up

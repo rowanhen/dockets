@@ -16,7 +16,7 @@ function Progress({
 			value={value}
 			max={max}
 			className={cn(
-				'relative h-2 w-full overflow-hidden rounded-none border-[length:var(--border-width)] border-foreground bg-transparent',
+				'relative h-2 w-full overflow-hidden rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-transparent',
 				className,
 			)}
 			{...props}
@@ -27,7 +27,7 @@ function Progress({
 			>
 				<ProgressPrimitive.Indicator
 					data-slot="progress-indicator"
-					className="h-full w-[var(--progress-value)] bg-foreground transition-all duration-300"
+					className="h-full w-[var(--progress-value)] bg-foreground transition-[width] duration-300"
 				/>
 			</ProgressPrimitive.Track>
 		</ProgressPrimitive.Root>

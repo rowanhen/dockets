@@ -22,7 +22,7 @@ function DatePicker({ value, onChange, placeholder = 'Pick a date', className }:
 			<button
 				type="button"
 				onClick={() => setOpen((v) => !v)}
-				className="inline-flex h-8 items-center gap-2 rounded-none border-[length:var(--border-width)] border-dashed border-foreground px-3 text-xs font-medium uppercase tracking-wider hover:bg-accent"
+				className="inline-flex h-8 items-center gap-2 rounded-[var(--radius)] border-[length:var(--border-width)] border-dashed border-foreground px-3 text-xs font-medium uppercase tracking-wider hover:bg-accent"
 			>
 				{formatted}
 			</button>

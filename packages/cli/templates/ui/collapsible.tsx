@@ -9,7 +9,7 @@ function Collapsible({ className, ...props }: CollapsiblePrimitive.Root.Props) {
 	return (
 		<CollapsiblePrimitive.Root
 			data-slot="collapsible"
-			className={cn('rounded-none', className)}
+			className={cn('rounded-[var(--radius)]', className)}
 			{...props}
 		/>
 	)
@@ -20,7 +20,7 @@ function CollapsibleTrigger({ className, children, ...props }: CollapsiblePrimit
 		<CollapsiblePrimitive.Trigger
 			data-slot="collapsible-trigger"
 			className={cn(
-				'group/collapsible-trigger flex w-full items-center justify-between rounded-none py-2 text-xs font-medium uppercase tracking-wider hover:underline disabled:pointer-events-none disabled:opacity-50',
+				'group/collapsible-trigger flex w-full items-center justify-between rounded-[var(--radius)] py-2 text-xs font-medium uppercase tracking-wider hover:underline disabled:pointer-events-none disabled:opacity-50',
 				className,
 			)}
 			{...props}

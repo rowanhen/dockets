@@ -33,7 +33,7 @@ function NavigationMenuItem({ className, ...props }: React.ComponentProps<'li'>)
 }
 
 const navigationMenuTriggerStyle = cn(
-	'group inline-flex h-9 items-center justify-center gap-1 rounded-none px-3 py-2 text-xs font-medium uppercase tracking-wider transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:bg-accent disabled:pointer-events-none disabled:opacity-50',
+	'group inline-flex h-9 items-center justify-center gap-1 rounded-[var(--radius)] px-3 py-2 text-xs font-medium uppercase tracking-wider hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:bg-accent disabled:pointer-events-none disabled:opacity-50',
 )
 
 function NavigationMenuTrigger({
@@ -58,7 +58,7 @@ function NavigationMenuContent({ className, ...props }: React.ComponentProps<'di
 		<div
 			data-slot="navigation-menu-content"
 			className={cn(
-				'absolute top-full left-0 z-50 w-auto min-w-48 rounded-none border-[length:var(--border-width)] border-foreground bg-popover p-2 text-popover-foreground shadow-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95',
+				'absolute top-full left-0 z-50 w-auto min-w-48 rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-popover p-2 text-popover-foreground shadow-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95',
 				className,
 			)}
 			{...props}
@@ -71,7 +71,7 @@ function NavigationMenuLink({ className, ...props }: React.ComponentProps<'a'>) 
 		<a
 			data-slot="navigation-menu-link"
 			className={cn(
-				'block select-none rounded-none px-3 py-2 text-xs leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:bg-accent focus-visible:text-accent-foreground',
+				'block select-none rounded-[var(--radius)] px-3 py-2 text-xs leading-none outline-none hover:bg-accent hover:text-accent-foreground focus-visible:bg-accent focus-visible:text-accent-foreground',
 				className,
 			)}
 			{...props}

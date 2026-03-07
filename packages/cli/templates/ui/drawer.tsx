@@ -59,7 +59,7 @@ function DrawerContent({
 			<DialogPrimitive.Popup
 				data-slot="drawer-content"
 				className={cn(
-					'fixed z-50 flex flex-col gap-4 rounded-none border-foreground bg-card p-4 text-xs/relaxed text-card-foreground duration-200 outline-none data-open:animate-in data-closed:animate-out data-closed:duration-200',
+					'fixed z-50 flex flex-col gap-4 rounded-[var(--radius)] border-foreground bg-card p-4 text-xs/relaxed text-card-foreground duration-200 outline-none data-open:animate-in data-closed:animate-out data-closed:duration-200',
 					sideClasses[side],
 					className,
 				)}

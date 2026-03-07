@@ -22,7 +22,7 @@ function Avatar({ className, src, alt, fallback, size = 'default', ...props }: A
 		<span
 			data-slot="avatar"
 			className={cn(
-				'relative inline-flex shrink-0 overflow-hidden rounded-none border-[length:var(--border-width)] border-dashed border-foreground',
+				'relative inline-flex shrink-0 overflow-hidden rounded-[var(--radius)] border-[length:var(--border-width)] border-dashed border-foreground',
 				sizeClasses[size],
 				className,
 			)}

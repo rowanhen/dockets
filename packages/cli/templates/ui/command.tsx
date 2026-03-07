@@ -21,7 +21,7 @@ function Command({ className, children, ...props }: React.ComponentProps<'div'>)
 			<div
 				data-slot="command"
 				className={cn(
-					'flex flex-col rounded-none border-[length:var(--border-width)] border-foreground bg-popover text-popover-foreground',
+					'flex flex-col rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-popover text-popover-foreground',
 					className,
 				)}
 				{...props}
@@ -106,7 +106,7 @@ function CommandItem({ className, onSelect, children, ...props }: React.Componen
 			}}
 			tabIndex={0}
 			className={cn(
-				'flex cursor-default select-none items-center gap-2 rounded-none px-2 py-1.5 text-xs outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground aria-disabled:pointer-events-none aria-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+				'flex cursor-default select-none items-center gap-2 rounded-[var(--radius)] px-2 py-1.5 text-xs outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground aria-disabled:pointer-events-none aria-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
 				className,
 			)}
 			{...props}

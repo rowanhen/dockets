@@ -24,14 +24,14 @@ function ScrollArea({
 		<div
 			data-slot="scroll-area"
 			className={cn(
-				'relative rounded-none',
+				'relative rounded-[var(--radius)]',
 				overflowClass,
 				// Thin system scrollbar
 				'[scrollbar-width:thin] [scrollbar-color:hsl(var(--foreground)/0.3)_transparent]',
 				// Webkit
 				'[&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar]:h-1.5',
 				'[&::-webkit-scrollbar-track]:bg-transparent',
-				'[&::-webkit-scrollbar-thumb]:rounded-none [&::-webkit-scrollbar-thumb]:bg-foreground/30 [&::-webkit-scrollbar-thumb]:hover:bg-foreground/50',
+				'[&::-webkit-scrollbar-thumb]:rounded-[var(--radius)] [&::-webkit-scrollbar-thumb]:bg-foreground/30 [&::-webkit-scrollbar-thumb]:hover:bg-foreground/50',
 				className,
 			)}
 			{...props}
@@ -49,14 +49,14 @@ function ScrollBar({ className, orientation = 'vertical', ...props }: React.Comp
 			data-slot="scroll-bar"
 			data-orientation={orientation}
 			className={cn(
-				'flex touch-none select-none bg-transparent transition-colors',
+				'flex touch-none select-none bg-transparent',
 				orientation === 'vertical' && 'h-full w-1.5 border-l-[length:var(--border-width)] border-l-transparent p-px',
 				orientation === 'horizontal' && 'h-1.5 w-full border-t-[length:var(--border-width)] border-t-transparent p-px flex-col',
 				className,
 			)}
 			{...props}
 		>
-			<div className="relative flex-1 rounded-none bg-foreground/30 hover:bg-foreground/50" />
+			<div className="relative flex-1 rounded-[var(--radius)] bg-foreground/30 hover:bg-foreground/50" />
 		</div>
 	)
 }

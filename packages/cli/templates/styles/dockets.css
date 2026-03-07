@@ -20,6 +20,26 @@
  *   border-[length:var(--border-width)]
  *   border-t-[length:var(--border-width)]  etc.
  *
+ * BORDER RADIUS
+ * ──────────────
+ * All dockets components use `--radius` instead of hardcoded values.
+ * Default is `0px` (brutalist). To soften edges:
+ *
+ *   :root { --radius: 4px; }   ← subtle rounding
+ *   :root { --radius: 8px; }   ← soft
+ *   :root { --radius: 0px; }   ← default (sharp corners)
+ *
+ * In Tailwind, reference it with:
+ *   rounded-[var(--radius)]
+ *
+ * NO COLOUR TRANSITIONS
+ * ──────────────────────
+ * Dockets components must NEVER use `transition-colors`,
+ * `transition-[background]`, or any property that animates colour changes.
+ * Hover/focus state changes are instant — no fade, no easing.
+ * Only structural transitions are allowed (e.g. `transition-transform`
+ * for sliding, `transition-[width]` for collapsing panels).
+ *
  * "BORDERS NEVER STACK" RULE
  * ───────────────────────────
  * Adjacent components must never produce double borders. Enforce this with:
@@ -56,6 +76,9 @@
   :root {
     /* ── Border width ──────────────────────────────── */
     --border-width: 1px;
+
+    /* ── Border radius ─────────────────────────────── */
+    --radius: 0px;
 
     /* ── Spacing (macro layout) ────────────────────── */
     --space-layout-sm: 1.5rem;   /* 24px */

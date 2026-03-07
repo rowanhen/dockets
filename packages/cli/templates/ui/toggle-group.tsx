@@ -26,7 +26,7 @@ function ToggleGroup({
 				data-slot="toggle-group"
 				className={cn(
 					// Container holds left+top border; items add right+bottom (newspaper pattern)
-					'inline-flex items-center rounded-none border-[length:var(--border-width)] border-foreground',
+					'inline-flex items-center rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground',
 					className,
 				)}
 				{...props}
@@ -54,7 +54,7 @@ function ToggleGroupItem({
 			className={cn(
 				toggleVariants({ variant: resolvedVariant, size: resolvedSize }),
 				// No stacking: container owns left border; items add right border except last
-				'rounded-none border-0',
+				'rounded-[var(--radius)] border-0',
 				'[&:not(:last-child)]:border-r-[length:var(--border-width)] [&:not(:last-child)]:border-foreground',
 				className,
 			)}

@@ -12,7 +12,7 @@ function Table({ className, ...props }: React.ComponentProps<'table'>) {
 	return (
 		<div
 			data-slot="table-wrapper"
-			className="relative w-full overflow-x-auto rounded-none border-[length:var(--border-width)] border-foreground"
+			className="relative w-full overflow-x-auto rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground"
 		>
 			<table
 				data-slot="table"
@@ -62,7 +62,7 @@ function TableRow({ className, ...props }: React.ComponentProps<'tr'>) {
 			data-slot="table-row"
 			className={cn(
 				// Row separator: border-b, except last row (handled by TableBody [last-child]:border-0)
-				'border-b-[length:var(--border-width)] border-foreground/30 transition-colors hover:bg-accent/50 data-selected:bg-accent',
+				'border-b-[length:var(--border-width)] border-foreground/30 hover:bg-accent/50 data-selected:bg-accent',
 				className,
 			)}
 			{...props}

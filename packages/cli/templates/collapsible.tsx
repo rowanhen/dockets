@@ -22,7 +22,7 @@ function CollapsibleSection({
 	return (
 		<Collapsible
 			defaultOpen={defaultOpen}
-			className={cn('rounded-none border-[length:var(--border-width)] border-foreground px-3', className)}
+			className={cn('rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground px-3', className)}
 		>
 			<CollapsibleTrigger className="py-2">{title}</CollapsibleTrigger>
 			<CollapsibleContent>

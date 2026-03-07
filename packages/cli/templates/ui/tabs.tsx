@@ -15,7 +15,7 @@ function Tabs({ className, orientation = 'horizontal', ...props }: TabsPrimitive
 }
 
 const tabsListVariants = cva(
-	'group/tabs-list flex w-full items-stretch rounded-none text-foreground h-10 [&>*:not([role=tab])]:hidden',
+	'group/tabs-list flex w-full items-stretch rounded-[var(--radius)] text-foreground h-10 [&>*:not([role=tab])]:hidden',
 	{
 		variants: {
 			variant: {

@@ -80,8 +80,8 @@ function InputOTP({
 						onPaste={handlePaste}
 						onFocus={(e) => e.target.select()}
 						className={cn(
-							'flex h-10 w-10 items-center justify-center rounded-none border-[length:var(--border-width)] border-foreground bg-transparent text-center text-sm font-medium caret-transparent outline-none',
-							'first-of-type:rounded-none',
+							'flex h-10 w-10 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-transparent text-center text-sm font-medium caret-transparent outline-none',
+							'first-of-type:rounded-[var(--radius)]',
 							// No stacking: right border only on all-but-last boxes when not separated
 							idx > 0 && idx % 3 !== 0 && '-ml-[length:var(--border-width)]',
 							'focus:z-10 focus:border-foreground focus:ring-1 focus:ring-foreground/30',
@@ -121,7 +121,7 @@ function InputOTPSlot({
 			data-slot="input-otp-slot"
 			data-active={active}
 			className={cn(
-				'relative flex h-10 w-10 items-center justify-center rounded-none border-[length:var(--border-width)] border-foreground text-sm font-medium',
+				'relative flex h-10 w-10 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground text-sm font-medium',
 				index !== 0 && '-ml-[length:var(--border-width)]',
 				active && 'z-10 ring-1 ring-foreground',
 				className,

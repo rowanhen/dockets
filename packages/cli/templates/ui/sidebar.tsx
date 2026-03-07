@@ -122,7 +122,7 @@ function SidebarNavItem({ className, active, ...props }: React.ComponentProps<'a
 			data-slot="sidebar-nav-item"
 			data-active={active}
 			className={cn(
-				'flex min-h-9 items-center gap-2 rounded-none px-2 text-xs font-medium uppercase tracking-wider transition-colors',
+				'flex min-h-9 items-center gap-2 rounded-[var(--radius)] px-2 text-xs font-medium uppercase tracking-wider',
 				'hover:bg-accent hover:text-accent-foreground',
 				active && 'bg-foreground text-background',
 				!open && 'justify-center px-0',
@@ -166,7 +166,7 @@ function SidebarTrigger({ className, ...props }: React.ComponentProps<'button'>)
 			data-slot="sidebar-trigger"
 			onClick={toggleOpen}
 			className={cn(
-				'flex size-8 items-center justify-center rounded-none text-muted-foreground hover:text-foreground',
+				'flex size-8 items-center justify-center rounded-[var(--radius)] text-muted-foreground hover:text-foreground',
 				className,
 			)}
 			aria-label="Toggle sidebar"

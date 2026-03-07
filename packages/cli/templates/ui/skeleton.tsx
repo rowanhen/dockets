@@ -5,7 +5,7 @@ function Skeleton({ className, ...props }: React.ComponentProps<'div'>) {
 	return (
 		<div
 			data-slot="skeleton"
-			className={cn('animate-pulse rounded-none bg-muted', className)}
+			className={cn('animate-pulse rounded-[var(--radius)] bg-muted', className)}
 			{...props}
 		/>
 	)
@@ -23,7 +23,7 @@ function SkeletonText({ lines = 3, className, ...props }: React.ComponentProps<'
 				<div
 					key={i}
 					className={cn(
-						'h-3 animate-pulse rounded-none bg-muted',
+						'h-3 animate-pulse rounded-[var(--radius)] bg-muted',
 						i === lines - 1 && 'w-3/4',
 					)}
 				/>

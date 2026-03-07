@@ -115,7 +115,7 @@ function CarouselPrevious({ className, ...props }: React.ComponentProps<'button'
 			onClick={scrollPrev}
 			disabled={!canScrollPrev}
 			className={cn(
-				'absolute left-2 top-1/2 -translate-y-1/2 flex size-8 items-center justify-center rounded-none border-[length:var(--border-width)] border-dashed border-foreground bg-card text-card-foreground hover:bg-accent disabled:pointer-events-none disabled:opacity-30',
+				'absolute left-2 top-1/2 -translate-y-1/2 flex size-8 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-dashed border-foreground bg-card text-card-foreground hover:bg-accent disabled:pointer-events-none disabled:opacity-30',
 				className,
 			)}
 			aria-label="Previous slide"
@@ -135,7 +135,7 @@ function CarouselNext({ className, ...props }: React.ComponentProps<'button'>) {
 			onClick={scrollNext}
 			disabled={!canScrollNext}
 			className={cn(
-				'absolute right-2 top-1/2 -translate-y-1/2 flex size-8 items-center justify-center rounded-none border-[length:var(--border-width)] border-dashed border-foreground bg-card text-card-foreground hover:bg-accent disabled:pointer-events-none disabled:opacity-30',
+				'absolute right-2 top-1/2 -translate-y-1/2 flex size-8 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-dashed border-foreground bg-card text-card-foreground hover:bg-accent disabled:pointer-events-none disabled:opacity-30',
 				className,
 			)}
 			aria-label="Next slide"

@@ -22,7 +22,7 @@ function ResizablePanelGroup({
 			data-slot="resizable-panel-group"
 			data-direction={direction}
 			className={cn(
-				'flex w-full rounded-none',
+				'flex w-full rounded-[var(--radius)]',
 				direction === 'horizontal' ? 'flex-row' : 'flex-col',
 				className,
 			)}
@@ -129,7 +129,7 @@ function ResizableHandle({
 			{...props}
 		>
 			{withHandle && (
-				<div className="z-10 flex h-6 w-3 items-center justify-center rounded-none border-[length:var(--border-width)] border-foreground bg-card">
+				<div className="z-10 flex h-6 w-3 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-card">
 					<GripVerticalIcon className="size-2.5" />
 				</div>
 			)}

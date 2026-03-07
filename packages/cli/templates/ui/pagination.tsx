@@ -40,7 +40,7 @@ function PaginationLink({ className, isActive, disabled, ...props }: PaginationL
 			aria-current={isActive ? 'page' : undefined}
 			aria-disabled={disabled}
 			className={cn(
-				'flex h-9 min-w-9 items-center justify-center rounded-none border-[length:var(--border-width)] border-foreground text-xs font-medium uppercase tracking-wider transition-colors',
+				'flex h-9 min-w-9 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground text-xs font-medium uppercase tracking-wider',
 				// No stacking: negative margin collapses adjacent item borders
 				'-ml-[length:var(--border-width)] first:ml-0',
 				isActive
@@ -88,7 +88,7 @@ function PaginationEllipsis({ className, ...props }: React.ComponentProps<'span'
 			data-slot="pagination-ellipsis"
 			aria-hidden
 			className={cn(
-				'flex h-9 w-9 items-center justify-center rounded-none border-[length:var(--border-width)] border-dashed border-foreground -ml-[length:var(--border-width)] first:ml-0 text-muted-foreground',
+				'flex h-9 w-9 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-dashed border-foreground -ml-[length:var(--border-width)] first:ml-0 text-muted-foreground',
 				className,
 			)}
 			{...props}

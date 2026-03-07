@@ -36,7 +36,7 @@ function ContextMenuContent({
 				<MenuPrimitive.Popup
 					data-slot="context-menu-content"
 					className={cn(
-						'z-50 min-w-32 origin-(--transform-origin) overflow-hidden rounded-none border-[length:var(--border-width)] border-foreground bg-popover text-popover-foreground shadow-none duration-100 outline-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95',
+						'z-50 min-w-32 origin-(--transform-origin) overflow-hidden rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-popover text-popover-foreground shadow-none duration-100 outline-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95',
 						className,
 					)}
 					{...props}
@@ -61,7 +61,7 @@ function ContextMenuItem({
 			data-inset={inset}
 			data-variant={variant}
 			className={cn(
-				"relative flex cursor-default items-center gap-2 rounded-none px-2 py-2 text-xs outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+				"relative flex cursor-default items-center gap-2 rounded-[var(--radius)] px-2 py-2 text-xs outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}
@@ -79,7 +79,7 @@ function ContextMenuCheckboxItem({
 		<MenuPrimitive.CheckboxItem
 			data-slot="context-menu-checkbox-item"
 			className={cn(
-				"relative flex cursor-default items-center gap-2 rounded-none py-2 pr-8 pl-2 text-xs outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+				"relative flex cursor-default items-center gap-2 rounded-[var(--radius)] py-2 pr-8 pl-2 text-xs outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			checked={checked}
@@ -108,7 +108,7 @@ function ContextMenuRadioItem({
 		<MenuPrimitive.RadioItem
 			data-slot="context-menu-radio-item"
 			className={cn(
-				"relative flex cursor-default items-center gap-2 rounded-none py-2 pr-8 pl-2 text-xs outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+				"relative flex cursor-default items-center gap-2 rounded-[var(--radius)] py-2 pr-8 pl-2 text-xs outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}
@@ -173,7 +173,7 @@ function ContextMenuSubTrigger({
 			data-slot="context-menu-sub-trigger"
 			data-inset={inset}
 			className={cn(
-				"flex cursor-default items-center gap-2 rounded-none px-2 py-2 text-xs outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-inset:pl-7 data-open:bg-accent data-open:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+				"flex cursor-default items-center gap-2 rounded-[var(--radius)] px-2 py-2 text-xs outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-inset:pl-7 data-open:bg-accent data-open:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}

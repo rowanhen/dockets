@@ -70,7 +70,7 @@ function Calendar({
 		<div
 			data-slot="calendar"
 			className={cn(
-				'w-full max-w-xs rounded-none border-[length:var(--border-width)] border-foreground bg-card text-card-foreground',
+				'w-full max-w-xs rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-card text-card-foreground',
 				className,
 			)}
 		>
@@ -136,7 +136,7 @@ function Calendar({
 							disabled={dis}
 							onClick={() => !dis && onSelect?.(new Date(year, month, day))}
 							className={cn(
-								'flex h-8 items-center justify-center text-xs transition-colors',
+								'flex h-8 items-center justify-center text-xs',
 								// Newspaper border rule
 								(idx + 1) % 7 !== 0 && 'border-r-[length:var(--border-width)] border-foreground/20',
 								idx < cells.length - 7 && 'border-b-[length:var(--border-width)] border-foreground/20',
