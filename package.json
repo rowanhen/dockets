@@ -3,9 +3,9 @@
   "private": true,
   "workspaces": ["packages/*"],
   "scripts": {
-    "build": "bun run --filter '@leitware/dockets' build && bun run --filter '@leitware/components' build",
+    "build": "bun run --filter '@leitware/dockets' build",
     "dev": "bun run --cwd packages/showcase dev",
-    "test": "bun run --filter '@leitware/dockets' test && bun run --filter '@leitware/components' test",
+    "test": "bun run --filter '@leitware/dockets' test",
     "prepare": "git config core.hooksPath .githooks"
   },
   "devDependencies": {
