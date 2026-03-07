@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "bun test"
+    "test": "vitest run"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
@@ -20,10 +20,17 @@
     "react": ">=17"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^16.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "jsdom": "^26.0.0",
     "react": "^18.0.0",
-    "typescript": "^5.7.0"
+    "react-dom": "^18.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
   },
   "license": "MIT"
 }

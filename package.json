@@ -5,7 +5,7 @@
   "scripts": {
     "build": "bun run --filter '@leitware/dockets' build && bun run --filter '@leitware/components' build",
     "dev": "bun run --cwd packages/showcase dev",
-    "test": "bun test --recursive",
+    "test": "bun run --filter '@leitware/dockets' test && bun run --filter '@leitware/components' test",
     "prepare": "git config core.hooksPath .githooks"
   },
   "devDependencies": {

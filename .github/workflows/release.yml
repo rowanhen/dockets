@@ -66,7 +66,7 @@ jobs:
         run: bun run build
 
       - name: Test
-        run: bun test --recursive
+        run: bun run test
 
       - name: Publish to npm
         working-directory: packages/cli
