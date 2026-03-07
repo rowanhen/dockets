@@ -20,7 +20,6 @@ import { DropdownMenu } from '@/components/dropdown-menu'
 import { Tooltip } from '@/components/tooltip'
 import { List } from '@/components/list'
 import { Breadcrumb } from '@/components/breadcrumb'
-import { ReceiptCard } from '@/components/receipt-card'
 import { Divider, SectionLabel, Row, DataTable, Glyph, Ledger } from '@/components/receipt'
 import {
 	CellGrid,
@@ -956,21 +955,7 @@ function ReceiptPrimitivesSection() {
 					</div>
 				</ExampleBlock>
 
-				{/* ReceiptCard */}
-				<ExampleBlock label="ReceiptCard (modes: center, left, right)">
-					<div className="grid md:grid-cols-3 gap-4">
-						<ReceiptCard title="Center" mode="center">
-							<div className="text-xs">Center-aligned title with balanced inset borders.</div>
-						</ReceiptCard>
-						<ReceiptCard title="Left" mode="left">
-							<div className="text-xs">Left-aligned title with short left corner.</div>
-						</ReceiptCard>
-						<ReceiptCard title="Right" mode="right">
-							<div className="text-xs">Right-aligned title with short right corner.</div>
-						</ReceiptCard>
-					</div>
-				</ExampleBlock>
-			</div>
+				</div>
 		</section>
 	)
 }

@@ -77,12 +77,28 @@
  *
  * RECEIPT AESTHETIC VARS
  * ───────────────────────
- * Legacy vars used by ReceiptCard and CodeBlock are kept for compatibility:
+ * Legacy vars used by CodeBlock and other components for compatibility:
  *   --border-color   (maps to your theme's border colour)
  *   --receipt-bg     (maps to your theme's card background)
  *   --bg-color       (maps to your theme's page background)
  *   --text-color     (maps to your theme's foreground)
+ *
+ * FOCUS RING UTILITY
+ * ───────────────────
+ * All dockets components use the `focus-ring` utility for consistent
+ * keyboard focus styling. Add the class directly — it handles :focus-visible
+ * internally:
+ *
+ *   <button class="focus-ring">...</button>
  */
+
+@utility focus-ring {
+  &:focus-visible {
+    outline: 1px dashed var(--border-color);
+    outline-offset: 2px;
+    background-color: var(--hover-bg);
+  }
+}
 
 @layer base {
   :root {

@@ -72,7 +72,7 @@
   --popover: #fcfcfc;
   --popover-foreground: #000000;
   --primary: #000000;
-  --primary-foreground: #e6e6e6;
+  --primary-foreground: #ffffff;
   --secondary: #d4d4d4;
   --secondary-foreground: #000000;
   --muted: #d4d4d4;
@@ -202,8 +202,6 @@
     outline: 1px dashed var(--border-color);
     outline-offset: 2px;
     background-color: var(--hover-bg);
-    z-index: 9999;
-    position: relative;
   }
 }
 

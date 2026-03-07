@@ -13,7 +13,7 @@ function Checkbox({ className, ...props }: CheckboxPrimitive.Root.Props) {
 				'disabled:cursor-not-allowed disabled:opacity-50',
 				'data-checked:bg-foreground data-checked:border-foreground data-checked:text-background',
 				'data-indeterminate:bg-foreground data-indeterminate:border-foreground data-indeterminate:text-background',
-				'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
+				'focus-ring',
 				'aria-invalid:border-destructive',
 				className,
 			)}

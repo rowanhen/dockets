@@ -7,7 +7,7 @@ function Accordion({ className, ...props }: AccordionPrimitive.Root.Props) {
 		<AccordionPrimitive.Root
 			data-slot="accordion"
 			className={cn(
-				'flex w-full flex-col border-[length:var(--border-width)] border-foreground',
+				'flex w-full flex-col border-t-[length:var(--border-width)] border-b-[length:var(--border-width)] border-foreground',
 				className,
 			)}
 			{...props}
@@ -19,7 +19,7 @@ function AccordionItem({ className, ...props }: AccordionPrimitive.Item.Props) {
 	return (
 		<AccordionPrimitive.Item
 			data-slot="accordion-item"
-			// Border-never-stack: items use border-b only; outer container holds border-t + sides
+			// Border-never-stack: items use border-b only; outer container holds border-t and border-b
 			className={cn('border-b-[length:var(--border-width)] border-foreground last:border-b-0', className)}
 			{...props}
 		/>

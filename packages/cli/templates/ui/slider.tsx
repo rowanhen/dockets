@@ -12,8 +12,8 @@ function Slider({ className, ...props }: SliderPrimitive.Root.Props) {
 		>
 			<SliderTrack>
 				<SliderFill />
-				<SliderThumb />
 			</SliderTrack>
+			<SliderThumb />
 		</SliderPrimitive.Root>
 	)
 }
@@ -47,7 +47,7 @@ function SliderThumb({ className, ...props }: SliderPrimitive.Thumb.Props) {
 			data-slot="slider-thumb"
 			className={cn(
 				'block size-5 rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-foreground shadow-none',
-				'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
+				'focus-ring',
 				'disabled:pointer-events-none disabled:opacity-50',
 				className,
 			)}

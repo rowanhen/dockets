@@ -54,7 +54,7 @@ function TabsTrigger({ className, ...props }: TabsPrimitive.Tab.Props) {
 				// Separator between tabs — single border drawn only once (no stacking)
 				'[&:not(:first-child)]:border-l-[length:var(--border-width)] [&:not(:first-child)]:border-foreground',
 				'disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50',
-				'data-active:bg-foreground data-active:text-background',
+				'data-active:bg-foreground data-active:text-primary-foreground',
 				'group-data-[variant=line]/tabs-list:border-l-0 group-data-[variant=line]/tabs-list:[&:not(:first-child)]:border-l-0',
 				'group-data-[variant=line]/tabs-list:bg-transparent group-data-[variant=line]/tabs-list:text-foreground/60',
 				'group-data-[variant=line]/tabs-list:data-active:bg-transparent group-data-[variant=line]/tabs-list:data-active:text-foreground group-data-[variant=line]/tabs-list:data-active:border-b-2 group-data-[variant=line]/tabs-list:data-active:border-b-foreground',

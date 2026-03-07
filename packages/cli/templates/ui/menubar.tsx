@@ -31,7 +31,7 @@ function MenubarTrigger({ className, children, ...props }: MenuPrimitive.Trigger
 				'flex h-full cursor-default items-center gap-1 px-3 text-xs font-medium uppercase tracking-wider select-none',
 				'hover:bg-accent hover:text-accent-foreground',
 				'data-popup-open:bg-foreground data-popup-open:text-background',
-				'focus-visible:outline-none focus-visible:bg-accent',
+				'focus-ring',
 				'disabled:pointer-events-none disabled:opacity-50',
 				// No stacking: each menu trigger gets right border except last
 				'[&:not(:last-child)]:border-r-[length:var(--border-width)] [&:not(:last-child)]:border-foreground',

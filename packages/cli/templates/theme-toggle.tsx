@@ -14,11 +14,19 @@ const themeIcons: Record<Theme, string> = {
 export function ThemeToggle() {
 	const [theme, setTheme] = useState<Theme>('light')
 
+	const applyTheme = (t: Theme) => {
+		if (t === 'light') {
+			document.documentElement.removeAttribute('data-theme')
+		} else {
+			document.documentElement.setAttribute('data-theme', t)
+		}
+	}
+
 	useEffect(() => {
 		const saved = localStorage.getItem('theme') as Theme | null
 		if (saved && themes.includes(saved)) {
 			setTheme(saved)
-			document.documentElement.setAttribute('data-theme', saved)
+			applyTheme(saved)
 		}
 	}, [])
 
@@ -28,7 +36,7 @@ export function ThemeToggle() {
 		const newTheme = themes[nextIndex]
 		setTheme(newTheme)
 		localStorage.setItem('theme', newTheme)
-		document.documentElement.setAttribute('data-theme', newTheme)
+		applyTheme(newTheme)
 	}
 
 	return (

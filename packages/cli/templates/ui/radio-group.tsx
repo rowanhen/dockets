@@ -20,7 +20,7 @@ function RadioGroupItem({ className, ...props }: Radio.Root.Props) {
 			data-slot="radio-group-item"
 			className={cn(
 				'peer flex size-4 shrink-0 items-center justify-center rounded-[var(--radius)] border-[length:var(--border-width)] border-foreground bg-transparent',
-				'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
+				'focus-ring',
 				'disabled:cursor-not-allowed disabled:opacity-50',
 				'data-checked:bg-foreground',
 				'aria-invalid:border-destructive',

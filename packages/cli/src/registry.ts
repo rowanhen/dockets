@@ -404,17 +404,6 @@ export const registry: Record<string, ComponentEntry> = {
     internalDeps: ["utils", "styles", "label"],
     tags: ["primitive", "extended"],
   },
-  "receipt-card": {
-    name: "receipt-card",
-    description: "Receipt-style bordered card with title",
-    files: [
-      { src: "ui/receipt-card.tsx", dest: "components/ui/receipt-card.tsx" },
-      { src: "receipt-card.tsx", dest: "components/receipt-card.tsx" },
-    ],
-    deps: [],
-    internalDeps: ["utils"],
-    tags: ["primitive", "extended"],
-  },
   resizable: {
     name: "resizable",
     description: "Draggable resizable panel group, pure pointer-event implementation",

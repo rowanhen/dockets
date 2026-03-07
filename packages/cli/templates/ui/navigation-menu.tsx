@@ -33,7 +33,7 @@ function NavigationMenuItem({ className, ...props }: React.ComponentProps<'li'>)
 }
 
 const navigationMenuTriggerStyle = cn(
-	'group inline-flex h-9 items-center justify-center gap-1 rounded-[var(--radius)] px-3 py-2 text-xs font-medium uppercase tracking-wider hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:bg-accent disabled:pointer-events-none disabled:opacity-50',
+	'group inline-flex h-9 items-center justify-center gap-1 rounded-[var(--radius)] px-3 py-2 text-xs font-medium uppercase tracking-wider hover:bg-accent hover:text-accent-foreground focus-ring disabled:pointer-events-none disabled:opacity-50',
 )
 
 function NavigationMenuTrigger({
@@ -71,7 +71,7 @@ function NavigationMenuLink({ className, ...props }: React.ComponentProps<'a'>) 
 		<a
 			data-slot="navigation-menu-link"
 			className={cn(
-				'block select-none rounded-[var(--radius)] px-3 py-2 text-xs leading-none outline-none hover:bg-accent hover:text-accent-foreground focus-visible:bg-accent focus-visible:text-accent-foreground',
+				'block select-none rounded-[var(--radius)] px-3 py-2 text-xs leading-none hover:bg-accent hover:text-accent-foreground focus-ring',
 				className,
 			)}
 			{...props}

@@ -123,7 +123,7 @@ function ResizableHandle({
 				direction === 'horizontal'
 					? 'after:inset-y-0 after:w-3 after:-translate-x-1/2'
 					: 'after:inset-x-0 after:h-3 after:-translate-y-1/2',
-				'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
+				'focus-ring',
 				className,
 			)}
 			{...props}
