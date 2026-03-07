@@ -1,0 +1,19 @@
+import * as React from 'react'
+import { cn } from '@/lib/utils'
+
+interface AspectRatioProps extends React.ComponentProps<'div'> {
+	ratio?: number
+}
+
+function AspectRatio({ ratio = 1, className, style, ...props }: AspectRatioProps) {
+	return (
+		<div
+			data-slot="aspect-ratio"
+			style={{ aspectRatio: ratio, ...style }}
+			className={cn('relative w-full overflow-hidden', className)}
+			{...props}
+		/>
+	)
+}
+
+export { AspectRatio }
