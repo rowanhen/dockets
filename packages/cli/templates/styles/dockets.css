@@ -1,0 +1,81 @@
+/**
+ * Dockets Design System — CSS Tokens
+ * ====================================
+ *
+ * Install this file alongside your Tailwind CSS and import it in your
+ * root layout:
+ *
+ *   import "@/styles/dockets.css";
+ *
+ * BORDER WIDTH
+ * ─────────────
+ * All dockets components use `--border-width` instead of a hardcoded `1px`.
+ * This lets you thicken every border in your app with a single variable:
+ *
+ *   :root { --border-width: 2px; }   ← chunky brutalist mode
+ *   :root { --border-width: 1px; }   ← default
+ *   :root { --border-width: 0.5px; } ← hairline
+ *
+ * In Tailwind, reference it with the arbitrary-length syntax:
+ *   border-[length:var(--border-width)]
+ *   border-t-[length:var(--border-width)]  etc.
+ *
+ * "BORDERS NEVER STACK" RULE
+ * ───────────────────────────
+ * Adjacent components must never produce double borders. Enforce this with:
+ *
+ *   • List/stack items:  `border-b-[length:var(--border-width)] [&:last-child]:border-b-0`
+ *     on items, `border-[length:var(--border-width)]` on the container.
+ *
+ *   • Newspaper grid:   Container gets `border-t-[length:var(--border-width)] border-l-[length:var(--border-width)]`.
+ *     Cells get `border-b-[length:var(--border-width)] border-r-[length:var(--border-width)]`.
+ *     Result: every cell has exactly one border per side, no stacking.
+ *
+ *   • Tab triggers:     Use `[&:not(:first-child)]:border-l-[length:var(--border-width)]`
+ *     so only the separator between tabs is drawn once.
+ *
+ * SPACING SCALE
+ * ─────────────
+ * Dockets uses Tailwind's default spacing scale (1 = 4px, 2 = 8px, …).
+ * Custom named tokens are provided below for macro-level layout spacing.
+ *
+ *   --space-layout-sm   → tight sections / modals
+ *   --space-layout-md   → standard page sections
+ *   --space-layout-lg   → generous hero/landing sections
+ *
+ * RECEIPT AESTHETIC VARS
+ * ───────────────────────
+ * Legacy vars used by ReceiptCard and CodeBlock are kept for compatibility:
+ *   --border-color   (maps to your theme's border colour)
+ *   --receipt-bg     (maps to your theme's card background)
+ *   --bg-color       (maps to your theme's page background)
+ *   --text-color     (maps to your theme's foreground)
+ */
+
+@layer base {
+  :root {
+    /* ── Border width ──────────────────────────────── */
+    --border-width: 1px;
+
+    /* ── Spacing (macro layout) ────────────────────── */
+    --space-layout-sm: 1.5rem;   /* 24px */
+    --space-layout-md: 3rem;     /* 48px */
+    --space-layout-lg: 6rem;     /* 96px */
+
+    /* ── Spacing scale aliases ─────────────────────── */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-7: 1.75rem;
+    --space-8: 2rem;
+
+    /* ── Receipt aesthetic (legacy compat) ─────────── */
+    --border-color: hsl(var(--border));
+    --receipt-bg:   hsl(var(--card));
+    --bg-color:     hsl(var(--background));
+    --text-color:   hsl(var(--foreground));
+  }
+}

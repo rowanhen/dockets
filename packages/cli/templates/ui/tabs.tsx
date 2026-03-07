@@ -19,8 +19,8 @@ const tabsListVariants = cva(
 	{
 		variants: {
 			variant: {
-				default: 'border border-foreground',
-				line: 'border-b border-foreground',
+				default: 'border-[length:var(--border-width)] border-foreground',
+				line: 'border-b-[length:var(--border-width)] border-foreground',
 			},
 		},
 		defaultVariants: {
@@ -51,7 +51,8 @@ function TabsTrigger({ className, ...props }: TabsPrimitive.Tab.Props) {
 			className={cn(
 				'flex-1 inline-flex items-center justify-center h-full text-xs font-medium uppercase tracking-wider whitespace-nowrap',
 				'bg-card text-card-foreground',
-				'[&:not(:first-child)]:border-l [&:not(:first-child)]:border-foreground',
+				// Separator between tabs — single border drawn only once (no stacking)
+				'[&:not(:first-child)]:border-l-[length:var(--border-width)] [&:not(:first-child)]:border-foreground',
 				'disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50',
 				'data-active:bg-foreground data-active:text-background',
 				'group-data-[variant=line]/tabs-list:border-l-0 group-data-[variant=line]/tabs-list:[&:not(:first-child)]:border-l-0',

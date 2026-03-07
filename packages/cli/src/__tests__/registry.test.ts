@@ -64,7 +64,7 @@ describe("registry", () => {
     ]);
   });
 
-  test("component count is at least 25", () => {
-    expect(Object.keys(registry).length).toBeGreaterThanOrEqual(25);
+  test("component count is at least 65", () => {
+    expect(Object.keys(registry).length).toBeGreaterThanOrEqual(65);
   });
 });
