@@ -1,6 +1,6 @@
 {
   "name": "@leitware/dockets",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "CLI to add Leitware design system components to your project",
   "type": "module",
   "bin": {
