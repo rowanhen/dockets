@@ -99,6 +99,8 @@
     outline: 1px dashed var(--border-color);
     outline-offset: 2px;
     background-color: var(--hover-bg);
+    z-index: 9999;
+    position: relative;
   }
 }
 
