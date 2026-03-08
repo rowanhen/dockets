@@ -19,7 +19,7 @@
 	},
 	"overrides": [
 		{
-			"includes": ["components/ui-opinionated/**"],
+			"includes": ["src/components/ui-opinionated/**"],
 			"linter": {
 				"rules": {
 					"style": {

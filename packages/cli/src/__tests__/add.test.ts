@@ -47,38 +47,38 @@ describe("CLI add command", () => {
   test("installs a single component and its files", () => {
     const { stdout, exitCode } = runCli("add button -y");
     expect(exitCode).toBe(0);
-    expect(stdout).toContain("components/ui/button.tsx");
-    expect(existsSync(join(fixtureDir, "components/ui/button.tsx"))).toBe(true);
-    expect(existsSync(join(fixtureDir, "components/ui-opinionated/button.tsx"))).toBe(true);
+    expect(stdout).toContain("src/components/ui/button.tsx");
+    expect(existsSync(join(fixtureDir, "src/components/ui/button.tsx"))).toBe(true);
+    expect(existsSync(join(fixtureDir, "src/components/ui-opinionated/button.tsx"))).toBe(true);
   });
 
   test("auto-installs internalDeps (utils for button)", () => {
     const { exitCode } = runCli("add button -y");
     expect(exitCode).toBe(0);
-    // button depends on utils → lib/utils.ts should exist
-    expect(existsSync(join(fixtureDir, "lib/utils.ts"))).toBe(true);
+    // button depends on utils → src/lib/utils.ts should exist
+    expect(existsSync(join(fixtureDir, "src/lib/utils.ts"))).toBe(true);
   });
 
   test("auto-installs transitive deps (dialog → button → utils)", () => {
     const { exitCode } = runCli("add dialog -y");
     expect(exitCode).toBe(0);
-    expect(existsSync(join(fixtureDir, "components/ui/dialog.tsx"))).toBe(true);
-    expect(existsSync(join(fixtureDir, "components/ui/button.tsx"))).toBe(true);
-    expect(existsSync(join(fixtureDir, "lib/utils.ts"))).toBe(true);
+    expect(existsSync(join(fixtureDir, "src/components/ui/dialog.tsx"))).toBe(true);
+    expect(existsSync(join(fixtureDir, "src/components/ui/button.tsx"))).toBe(true);
+    expect(existsSync(join(fixtureDir, "src/lib/utils.ts"))).toBe(true);
   });
 
   test("installs multiple components in one command", () => {
     const { stdout, exitCode } = runCli("add badge separator -y");
     expect(exitCode).toBe(0);
-    expect(existsSync(join(fixtureDir, "components/ui/badge.tsx"))).toBe(true);
-    expect(existsSync(join(fixtureDir, "components/ui/separator.tsx"))).toBe(true);
+    expect(existsSync(join(fixtureDir, "src/components/ui/badge.tsx"))).toBe(true);
+    expect(existsSync(join(fixtureDir, "src/components/ui/separator.tsx"))).toBe(true);
   });
 
   test("deduplicates shared deps across components", () => {
     const { stdout, exitCode } = runCli("add dialog combobox -y");
     expect(exitCode).toBe(0);
     // Both depend on button → should only appear once in output
-    const buttonMatches = stdout.match(/components\/ui\/button\.tsx/g);
+    const buttonMatches = stdout.match(/src\/components\/ui\/button\.tsx/g);
     expect(buttonMatches?.length).toBe(1);
   });
 
@@ -86,11 +86,11 @@ describe("CLI add command", () => {
 
   test("skips existing files without -y flag", () => {
     // Pre-create the file
-    const destDir = join(fixtureDir, "components/ui");
+    const destDir = join(fixtureDir, "src/components/ui");
     mkdirSync(destDir, { recursive: true });
     writeFileSync(join(destDir, "button.tsx"), "// existing");
-    mkdirSync(join(fixtureDir, "lib"), { recursive: true });
-    writeFileSync(join(fixtureDir, "lib/utils.ts"), "// existing");
+    mkdirSync(join(fixtureDir, "src/lib"), { recursive: true });
+    writeFileSync(join(fixtureDir, "src/lib/utils.ts"), "// existing");
 
     const { stdout, exitCode } = runCli("add button");
     expect(exitCode).toBe(0);
@@ -100,11 +100,11 @@ describe("CLI add command", () => {
   });
 
   test("overwrites existing files with -y flag", () => {
-    const destDir = join(fixtureDir, "components/ui");
+    const destDir = join(fixtureDir, "src/components/ui");
     mkdirSync(destDir, { recursive: true });
     writeFileSync(join(destDir, "button.tsx"), "// old");
-    mkdirSync(join(fixtureDir, "lib"), { recursive: true });
-    writeFileSync(join(fixtureDir, "lib/utils.ts"), "// old");
+    mkdirSync(join(fixtureDir, "src/lib"), { recursive: true });
+    writeFileSync(join(fixtureDir, "src/lib/utils.ts"), "// old");
 
     const { exitCode } = runCli("add button -y");
     expect(exitCode).toBe(0);
@@ -144,7 +144,7 @@ describe("CLI add command", () => {
   test("rewrites import aliases with --alias flag", () => {
     const { exitCode } = runCli("add button -y --alias '~/'");
     expect(exitCode).toBe(0);
-    const content = readFileSync(join(fixtureDir, "components/ui/button.tsx"), "utf-8");
+    const content = readFileSync(join(fixtureDir, "src/components/ui/button.tsx"), "utf-8");
     expect(content).toContain("from '~/lib/utils'");
     expect(content).not.toContain("from '@/");
   });
@@ -156,7 +156,7 @@ describe("CLI add command", () => {
     mkdirSync(customDir, { recursive: true });
     const { exitCode } = runCli(`add button -y -d ${customDir}`);
     expect(exitCode).toBe(0);
-    expect(existsSync(join(customDir, "components/ui/button.tsx"))).toBe(true);
+    expect(existsSync(join(customDir, "src/components/ui/button.tsx"))).toBe(true);
   });
 
   // ─── Foundation components ────────────────────────────────────
@@ -164,8 +164,8 @@ describe("CLI add command", () => {
   test("installs styles foundation (dockets.css)", () => {
     const { exitCode } = runCli("add styles -y");
     expect(exitCode).toBe(0);
-    expect(existsSync(join(fixtureDir, "styles/dockets.css"))).toBe(true);
-    const css = readFileSync(join(fixtureDir, "styles/dockets.css"), "utf-8");
+    expect(existsSync(join(fixtureDir, "src/styles/dockets.css"))).toBe(true);
+    const css = readFileSync(join(fixtureDir, "src/styles/dockets.css"), "utf-8");
     expect(css).toContain("--border-width");
     expect(css).toContain("--radius");
   });
@@ -173,8 +173,8 @@ describe("CLI add command", () => {
   test("installs utils foundation", () => {
     const { exitCode } = runCli("add utils -y");
     expect(exitCode).toBe(0);
-    expect(existsSync(join(fixtureDir, "lib/utils.ts"))).toBe(true);
-    const utils = readFileSync(join(fixtureDir, "lib/utils.ts"), "utf-8");
+    expect(existsSync(join(fixtureDir, "src/lib/utils.ts"))).toBe(true);
+    const utils = readFileSync(join(fixtureDir, "src/lib/utils.ts"), "utf-8");
     expect(utils).toContain("cn(");
   });
 
@@ -184,7 +184,7 @@ describe("CLI add command", () => {
     const { exitCode } = runCli("add layout -y");
     expect(exitCode).toBe(0);
     const content = readFileSync(
-      join(fixtureDir, "components/ui/layout.tsx"),
+      join(fixtureDir, "src/components/ui/layout.tsx"),
       "utf-8"
     );
     expect(content).toContain("Container");

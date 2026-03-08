@@ -52,15 +52,15 @@ describe("registry", () => {
   test("button is registered with primitive + extended files", () => {
     expect(registry.button).toBeDefined();
     expect(registry.button.files).toEqual([
-      { src: "ui/button.tsx", dest: "components/ui/button.tsx" },
-      { src: "ui-opinionated/button.tsx", dest: "components/ui-opinionated/button.tsx" },
+      { src: "ui/button.tsx", dest: "src/components/ui/button.tsx" },
+      { src: "ui-opinionated/button.tsx", dest: "src/components/ui-opinionated/button.tsx" },
     ]);
   });
 
   test("utils is registered", () => {
     expect(registry.utils).toBeDefined();
     expect(registry.utils.files).toEqual([
-      { src: "lib/utils.ts", dest: "lib/utils.ts" },
+      { src: "lib/utils.ts", dest: "src/lib/utils.ts" },
     ]);
   });
 

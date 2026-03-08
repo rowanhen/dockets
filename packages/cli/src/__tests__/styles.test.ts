@@ -356,7 +356,7 @@ describe("style consistency", () => {
 describe("registry style entries", () => {
   test("styles entry exists and installs dockets.css", () => {
     expect(registry.styles).toBeDefined();
-    expect(registry.styles.files[0].dest).toBe("styles/dockets.css");
+    expect(registry.styles.files[0].dest).toBe("src/styles/dockets.css");
     expect(registry.styles.tags).toContain("foundation");
   });
 

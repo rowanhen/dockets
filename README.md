@@ -66,19 +66,20 @@ Components are organized into two layers:
 
 ```
 your-project/
-├── components/
-│   ├── ui/                  # Primitives — low-level styled building blocks
-│   │   ├── button.tsx
-│   │   ├── dialog.tsx
-│   │   └── ...
-│   └── ui-opinionated/      # Opinionated wrappers — what you import in your app
-│       ├── button.tsx
-│       ├── dialog.tsx
-│       └── ...
-├── lib/
-│   └── utils.ts             # cn() utility
-└── styles/
-    └── dockets.css           # Design tokens
+└── src/
+    ├── components/
+    │   ├── ui/                  # Primitives — low-level styled building blocks
+    │   │   ├── button.tsx
+    │   │   ├── dialog.tsx
+    │   │   └── ...
+    │   └── ui-opinionated/      # Opinionated wrappers — what you import in your app
+    │       ├── button.tsx
+    │       ├── dialog.tsx
+    │       └── ...
+    ├── lib/
+    │   └── utils.ts             # cn() utility
+    └── styles/
+        └── dockets.css           # Design tokens
 ```
 
 ### `components/ui/` -- Primitives
@@ -178,12 +179,12 @@ Dockets ships an installable [Biome](https://biomejs.dev) lint rule that prevent
 leit add biome-ui-restricted
 ```
 
-This copies `biome-ui-restricted.json` into `lib/rules/`. Then extend it from your project's `biome.json`:
+This copies `biome-ui-restricted.json` into `src/lib/rules/`. Then extend it from your project's `biome.json`:
 
 ```jsonc
 {
   "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
-  "extends": ["./lib/rules/biome-ui-restricted.json"]
+  "extends": ["./src/lib/rules/biome-ui-restricted.json"]
 }
 ```
 
@@ -236,8 +237,8 @@ Utilities: `focus-ring` (dashed keyboard focus outline), `scrollbar-none` (hide 
 Each component lists its npm dependencies after install:
 
 ```
-✓ components/ui/button.tsx
-✓ components/ui-opinionated/button.tsx
+✓ src/components/ui/button.tsx
+✓ src/components/ui-opinionated/button.tsx
 
 Install dependencies:
   npm install class-variance-authority clsx tailwind-merge
