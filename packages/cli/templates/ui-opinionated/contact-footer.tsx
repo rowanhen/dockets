@@ -1,9 +1,9 @@
 import { useMutation } from 'convex/react'
 import { Check } from 'lucide-react'
-import { BlockLoader } from '@/components/block-loader'
+import { BlockLoader } from '@/components/ui-opinionated/block-loader'
 import { useState } from 'react'
-import { FormInput } from '@/components/form-input'
-import { Button } from '@/components/button'
+import { FormInput } from '@/components/ui-opinionated/form-input'
+import { Button } from '@/components/ui-opinionated/button'
 import { CAL_LINK, COMPANY_EMAIL, COMPANY_PHONE } from '@/lib/constants'
 import { api } from '../../convex/_generated/api'
 

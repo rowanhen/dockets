@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Button } from '@/components/button'
+import { Button } from '@/components/ui-opinionated/button'
 
 type Theme = 'light' | 'dark' | 'deep'
 

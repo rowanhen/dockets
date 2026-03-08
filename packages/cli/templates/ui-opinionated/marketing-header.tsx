@@ -1,6 +1,6 @@
-import { Logo } from '@/components/logo'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { Button } from '@/components/button'
+import { Logo } from '@/components/ui-opinionated/logo'
+import { ThemeToggle } from '@/components/ui-opinionated/theme-toggle'
+import { Button } from '@/components/ui-opinionated/button'
 import { CAL_LINK } from '@/lib/constants'
 
 interface MarketingHeaderProps {

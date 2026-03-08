@@ -53,7 +53,7 @@ describe("registry", () => {
     expect(registry.button).toBeDefined();
     expect(registry.button.files).toEqual([
       { src: "ui/button.tsx", dest: "components/ui/button.tsx" },
-      { src: "button.tsx", dest: "components/button.tsx" },
+      { src: "ui-opinionated/button.tsx", dest: "components/ui-opinionated/button.tsx" },
     ]);
   });
 
@@ -64,7 +64,7 @@ describe("registry", () => {
     ]);
   });
 
-  test("component count is at least 65", () => {
-    expect(Object.keys(registry).length).toBeGreaterThanOrEqual(65);
+  test("component count is at least 78", () => {
+    expect(Object.keys(registry).length).toBeGreaterThanOrEqual(78);
   });
 });

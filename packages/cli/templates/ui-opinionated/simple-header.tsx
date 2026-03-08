@@ -1,8 +1,8 @@
 import { useQuery } from 'convex/react'
 import { Link } from '@tanstack/react-router'
 import { api } from '../../convex/_generated/api'
-import { Logo } from '@/components/logo'
-import { ThemeToggle } from '@/components/theme-toggle'
+import { Logo } from '@/components/ui-opinionated/logo'
+import { ThemeToggle } from '@/components/ui-opinionated/theme-toggle'
 
 interface NavLinkConfig {
 	to: string

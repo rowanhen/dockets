@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { type PricingProduct, PricingReceipt } from './pricing-receipt'
-import { Button } from '@/components/button'
+import { Button } from '@/components/ui-opinionated/button'
 
 interface PricingTabsProps {
 	catchUpProducts: PricingProduct[]

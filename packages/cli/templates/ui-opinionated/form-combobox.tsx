@@ -10,7 +10,12 @@ import {
 	ComboboxItem,
 	ComboboxList,
 } from '@/components/ui/combobox'
-import { cn } from '@/lib/utils'
+import {
+	Field,
+	FieldLabel,
+	FieldDescription,
+	FieldError,
+} from '@/components/ui/field'
 
 export interface ComboboxOption {
 	value: string
@@ -19,29 +24,35 @@ export interface ComboboxOption {
 	description?: string
 }
 
-export interface ComboboxProps {
+export interface FormComboboxProps {
 	options?: ComboboxOption[]
 	value?: string[]
 	onValueChange?: (ids: string[]) => void
 	placeholder?: string
 	emptyMessage?: string
 	label?: string
+	description?: string
+	error?: string
+	required?: boolean
 	disabled?: boolean
 	className?: string
 	children?: React.ReactNode
 }
 
-function Combobox({
+function FormCombobox({
 	options,
 	value = [],
 	onValueChange,
 	placeholder = 'Search...',
 	emptyMessage = 'No results found.',
 	label,
+	description,
+	error,
+	required,
 	disabled = false,
 	className,
 	children,
-}: ComboboxProps) {
+}: FormComboboxProps) {
 	const [inputValue, setInputValue] = useState('')
 	const anchorRef = useRef<HTMLDivElement>(null)
 
@@ -77,19 +88,14 @@ function Combobox({
 	}
 
 	return (
-		<div className={cn('flex flex-col gap-1', className)}>
-			{label && (
-				<span className="text-xs font-medium uppercase tracking-wider">
-					{label}
-				</span>
-			)}
+		<Field error={error} required={required} className={className}>
+			{label && <FieldLabel>{label}</FieldLabel>}
 			<ComboboxPrimitive
 				multiple
 				value={value}
 				onValueChange={(val) => onValueChange?.(val as string[])}
 				disabled={disabled}
 			>
-				{/* Selected chips + inline search input */}
 				<div ref={anchorRef} className="flex min-h-8 flex-wrap items-center gap-1 border border-input bg-transparent px-2.5 py-1 text-xs">
 					{value.map((v) => {
 						const opt = optionsByValue.get(v)
@@ -141,12 +147,14 @@ function Combobox({
 					<ComboboxEmpty>{emptyMessage}</ComboboxEmpty>
 				</ComboboxContent>
 			</ComboboxPrimitive>
-		</div>
+			{description && <FieldDescription>{description}</FieldDescription>}
+			<FieldError />
+		</Field>
 	)
 }
 
 export {
-	Combobox,
+	FormCombobox,
 	ComboboxContent,
 	ComboboxEmpty,
 	ComboboxItem,

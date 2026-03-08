@@ -9,7 +9,12 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select'
-import { cn } from '@/lib/utils'
+import {
+	Field,
+	FieldLabel,
+	FieldDescription,
+	FieldError,
+} from '@/components/ui/field'
 
 export interface SelectOptionData {
 	value: string
@@ -22,11 +27,12 @@ export interface SelectGroupData {
 	options: SelectOptionData[]
 }
 
-export interface SelectProps {
+export interface FormSelectProps {
 	options?: SelectOptionData[]
 	groups?: SelectGroupData[]
 	placeholder?: string
 	label?: string
+	description?: string
 	error?: string
 	disabled?: boolean
 	required?: boolean
@@ -38,11 +44,12 @@ export interface SelectProps {
 	children?: React.ReactNode
 }
 
-function Select({
+function FormSelect({
 	options,
 	groups,
 	placeholder = 'Select...',
 	label,
+	description,
 	error,
 	disabled = false,
 	required = false,
@@ -52,9 +59,7 @@ function Select({
 	defaultValue,
 	onValueChange,
 	children,
-}: SelectProps) {
-	const hasError = Boolean(error)
-
+}: FormSelectProps) {
 	const rootProps: Record<string, unknown> = { disabled }
 	if (value !== undefined) rootProps.value = value
 	if (defaultValue !== undefined) rootProps.defaultValue = defaultValue
@@ -84,17 +89,12 @@ function Select({
 	) : null
 
 	return (
-		<div className={cn('flex flex-col gap-1', className)} data-invalid={hasError || undefined}>
-			{label && (
-				<span className="text-xs font-medium uppercase tracking-wider">
-					{label}
-					{required && <span className="text-destructive ml-0.5">*</span>}
-				</span>
-			)}
+		<Field error={error} required={required} className={className}>
+			{label && <FieldLabel>{label}</FieldLabel>}
 			<SelectPrimitive {...rootProps}>
 				<SelectTrigger
 					className={triggerClassName}
-					aria-invalid={hasError}
+					aria-invalid={!!error}
 					aria-label={label || undefined}
 				>
 					<SelectValue placeholder={placeholder} />
@@ -102,9 +102,10 @@ function Select({
 				{content}
 				{children}
 			</SelectPrimitive>
-			{error && <p className="text-[10px] text-destructive">{error}</p>}
-		</div>
+			{description && <FieldDescription>{description}</FieldDescription>}
+			<FieldError />
+		</Field>
 	)
 }
 
-export { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue }
+export { FormSelect, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue }

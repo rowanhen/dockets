@@ -49,7 +49,7 @@ describe("CLI add command", () => {
     expect(exitCode).toBe(0);
     expect(stdout).toContain("components/ui/button.tsx");
     expect(existsSync(join(fixtureDir, "components/ui/button.tsx"))).toBe(true);
-    expect(existsSync(join(fixtureDir, "components/button.tsx"))).toBe(true);
+    expect(existsSync(join(fixtureDir, "components/ui-opinionated/button.tsx"))).toBe(true);
   });
 
   test("auto-installs internalDeps (utils for button)", () => {
