@@ -43,6 +43,11 @@ export const addCommand = new Command("add")
   .action((components: string[], options) => {
     const projectRoot = resolve(process.cwd(), options.dest);
 
+    // "all" installs every component in the registry
+    if (components.length === 1 && components[0] === "all") {
+      components = Object.keys(registry);
+    }
+
     // Resolve all requested components + their deps
     const visited = new Set<string>();
     const toInstall: ComponentEntry[] = [];
